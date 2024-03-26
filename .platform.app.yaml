@@ -14,6 +14,7 @@ runtime:
         - iconv
         - mbstring
         - sodium
+        - pdo_pgsql
         
 
 variables:
