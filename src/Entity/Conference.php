@@ -17,12 +17,25 @@ class Conference
     #[ORM\Column(type: 'string', length: 255)]
     private string $city;
 
+    #[ORM\Column(type: 'integer')]
+    private int $year;
+
     #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: 'conference', orphanRemoval: true)]
     private Collection $comments;
 
     public function __construct()
     {
         $this->comments = new ArrayCollection();
+    }
+
+    public function __toString(): string
+    {
+        return $this->city . ' ' . $this->year;
+    }
+
+    public function getId(): ?int
+    {
+        return $this->id;
     }
 
     // ...
@@ -35,6 +48,18 @@ class Conference
     public function setCity(string $city): self
     {
         $this->city = $city;
+
+        return $this;
+    }
+
+    public function getYear(): int
+    {
+        return $this->year;
+    }
+
+    public function setYear(int $year): self
+    {
+        $this->year = $year;
 
         return $this;
     }
