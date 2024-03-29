@@ -7,6 +7,7 @@ use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CommentRepository::class)]
+#[ORM\HasLifecycleCallbacks]
 class Comment
 {
     #[ORM\Id]
@@ -94,12 +95,11 @@ class Comment
        return $this->created_at;
     }
 
-    public function setCreatedAt(DateTimeImmutable $createdAt): self
+    #[ORM\PrePersist]
+    public function setCreatedAtValue(): void
     {
 
-        $this->created_at = $createdAt;
-
-        return $this;
+        $this->created_at = new DateTimeImmutable();
     }
 
     public function getPhotoFilename(): ?string
