@@ -1,6 +1,7 @@
 /.idea
 .DS_Store
 ###> symfony/framework-bundle ###
+/public/uploads
 
 /.env.local
 /.env.local.php
