@@ -23,6 +23,9 @@ class Conference
     #[ORM\Column(type: 'integer')]
     private int $year;
 
+    #[ORM\Column(type: 'boolean')]
+    private bool $isInternational;
+
     #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: 'conference', orphanRemoval: true)]
     private Collection $comments;
 
@@ -63,6 +66,17 @@ class Conference
         $this->city = $city;
 
         return $this;
+    }
+
+    public function setIsInternational(bool $isInternational): static
+    {
+        $this->isInternational = $isInternational;
+        return $this;
+    }
+
+    public function getIsInternational(): bool
+    {
+        return $this->isInternational;
     }
 
     public function getYear(): int
