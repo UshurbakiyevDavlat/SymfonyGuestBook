@@ -55,4 +55,19 @@ class ConferenceControllerTest extends WebTestCase
         $this->assertSelectorTextContains('h2', 'Amsterdam 2019');
         $this->assertSelectorExists('div:contains("There are 1 comments")');
     }
+
+//    public function testMailerAssertions() TODO непонятно почему не работает
+//    {
+//        $client = static::createClient();
+//        $client->request('GET', '/');
+//        $this->assertEmailCount(1);
+//
+//        $event = $this->getMailerEvent(0);
+//        $this->assertEmailIsQueued($event);
+//
+//        $email = $this->getMailerMessage(0);
+//        $this->assertEmailHeaderSame($email, 'To', 'fabien@example.com');
+//        $this->assertEmailTextBodyContains($email, 'Bar');
+//        $this->assertEmailAttachmentCount($email, 0);
+//    }
 }
