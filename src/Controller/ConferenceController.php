@@ -32,6 +32,14 @@ class ConferenceController extends AbstractController
     {
         return $this->render('conference/index.html.twig', [
             'conferences' => $conferenceRepository->findAll(),
+        ])->setSharedMaxAge(3600);
+    }
+
+    #[Route('/conference_header', name: 'conference_header')]
+    public function conference_header(ConferenceRepository $conferenceRepository): Response
+    {
+        return $this->render('conference/header.html.twig', [
+            'conferences' => $conferenceRepository->findAll(),
         ]);
     }
 
@@ -54,11 +62,13 @@ class ConferenceController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $comment->setConference($conference);
+
             if ($photo = $form['photoFilename']->getData()) {
                 $filename = bin2hex(random_bytes(6)) . '.' . $photo->guessExtension();
                 $photo->move($photoDir, $filename);
                 $comment->setPhotoFilename($filename);
             }
+
             $this->entityManager->persist($comment);
             $this->entityManager->flush();
 

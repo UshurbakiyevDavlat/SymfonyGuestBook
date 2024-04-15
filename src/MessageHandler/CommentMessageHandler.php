@@ -67,7 +67,6 @@ readonly class CommentMessageHandler
                 ->from($this->adminEmail)
                 ->to($this->adminEmail)
                 ->context(['comment' => $comment]));
-
         } else {
             $this->logger->debug('Dropping comment message', [
                 'comment' => $comment->getId(),
