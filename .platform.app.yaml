@@ -15,7 +15,9 @@ runtime:
         - mbstring
         - sodium
         - pdo_pgsql
-        
+        - xsl
+        - gd
+
 
 variables:
     php:
@@ -35,11 +37,11 @@ web:
 mounts:
     "/var": { source: local, source_path: var }
     "/public/uploads": { source: service, service: files, source_path: uploads }
-    
+
 
 relationships:
     database: "database:postgresql"
-    
+
 hooks:
     build: |
         set -x -e
