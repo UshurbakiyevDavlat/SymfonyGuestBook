@@ -7,8 +7,9 @@ namespace App\Message;
 readonly class CommentMessage
 {
     public function __construct(
-        private int   $id,
-        private array $context = [],
+        private int    $id,
+        private string $reviewUrl,
+        private array  $context = [],
     )
     {
     }
@@ -31,6 +32,11 @@ readonly class CommentMessage
     public function getContext(): array
     {
         return $this->context;
+    }
+
+    public function getReviewUrl(): string
+    {
+        return $this->reviewUrl;
     }
 
 
