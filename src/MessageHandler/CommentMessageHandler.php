@@ -6,6 +6,7 @@ namespace App\MessageHandler;
 
 use App\ImageOptimizer;
 use App\Message\CommentMessage;
+use App\Notification\CommentApprovalNotification;
 use App\Notification\CommentReviewNotification;
 use App\Repository\CommentRepository;
 use App\SpamChecker;
@@ -17,6 +18,7 @@ use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Notifier\NotifierInterface;
+use Symfony\Component\Notifier\Recipient\Recipient;
 use Symfony\Component\Workflow\WorkflowInterface;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 
@@ -72,6 +74,11 @@ readonly class CommentMessageHandler
             }
             $this->commentStateMachine->apply($comment, 'optimize');
             $this->entityManager->flush();
+
+            $recipient = new Recipient($comment->getEmail());
+            $notification = new CommentApprovalNotification($comment);
+
+            $this->notifier->send($notification, $recipient);
         } else {
             $this->logger->debug('Dropping comment message', [
                 'comment' => $comment->getId(),

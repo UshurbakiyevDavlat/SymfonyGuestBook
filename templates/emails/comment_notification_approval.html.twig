@@ -1,0 +1,12 @@
+{% extends '@email/default/notification/body.html.twig' %}
+
+{% block content %}
+    <p>
+        Hi, {{ comment.author }} your comment " {{ comment.text }} " was approved, you can check it on the site.
+    </p>
+{% endblock %}
+
+{% block action %}
+    <spacer size="16"></spacer>
+    <button href="{{ url('homepage') }}">Get back to the website!</button>
+{% endblock %}
