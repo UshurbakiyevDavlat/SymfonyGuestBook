@@ -3,8 +3,19 @@ import {h, render} from 'preact';
 import {Link, Router} from "preact-router";
 import Conference from "./pages/conference";
 import Home from "./pages/home";
+import {useState, useEffect} from "preact/hooks";
+import {findConferences} from "./api/api"
 
 function App() {
+    const [conferences, setConferences] = useState(null);
+    useEffect(() => {
+        findConferences().then((conferences) => setConferences(conferences))
+    });
+
+    if (conferences === null) {
+        return <div className="text-center pt-5">Loading...</div>;
+    }
+
     return (
         <div>
             <header className='header'>
@@ -17,15 +28,19 @@ function App() {
                 </nav>
 
                 <nav className="bg-light border-bottom text-center">
-                    <Link className="nav-conference" href="/conference/amsterdam2019">
-                        Amsterdam 2019
-                    </Link>
+                    {
+                        conferences.map((conference) => (
+                            <Link className="nav-conference" href={'/conference/' + conference.slug}>
+                                {conference.city} {conference.year}
+                            </Link>
+                        ))
+                    }
                 </nav>
             </header>
 
             <Router>
-                <Home path='/'/>
-                <Conference path="/conference/:slug"/>
+                <Home path='/' conferences={conferences}/>
+                <Conference path="/conference/:slug" conferences={conferences} />
             </Router>
         </div>
     );
