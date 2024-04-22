@@ -2,4 +2,4 @@
 "http://{all}/": { type: redirect, to: "https://{all}/" }
 
 "https://spa.{all}/": { type: upstream, upstream: "spa:http" }
-"http://spa.{all}/": { type: redirect, upstream: "https://spa.{all}/" }
+"http://spa.{all}/": { type: redirect, to: "https://spa.{all}/" }
