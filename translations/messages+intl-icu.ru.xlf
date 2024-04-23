@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="en" target-language="ru" datatype="plaintext" original="file.ext">
+        <header>
+            <tool tool-id="symfony" tool-name="Symfony"/>
+        </header>
+        <body>
+            <trans-unit id="eOy4.6V" resname="Conference Guestbook">
+                <source>Conference Guestbook</source>
+                <target>Гостевая книга конференции</target>
+            </trans-unit>
+            <trans-unit id="LNAVleg" resname="Give your feedback!">
+                <source>Give your feedback!</source>
+                <target>Оставьте свой отзыв!</target>
+            </trans-unit>
+            <trans-unit id="3Mg5pAF" resname="View">
+                <source>View</source>
+                <target>Просмотреть</target>
+            </trans-unit>
+            <trans-unit id="wcIksDz" resname="Admin">
+                <source>Admin</source>
+                <target>Админ</target>
+            </trans-unit>
+            <trans-unit id="sF2VxiN" resname="Back to top">
+                <source>Back to top</source>
+                <target>На вверх</target>
+            </trans-unit>
+            <trans-unit id="zI.Z63_" resname="Welcome!">
+                <source>Welcome!</source>
+                <target>Добро пожаловать!</target>
+            </trans-unit>
+            <trans-unit id="TlZecGS" resname="Conference">
+                <source>Conference</source>
+                <target>Конференция</target>
+            </trans-unit>
+            <trans-unit id="oW0a6y." resname="There are">
+                <source>There are</source>
+                <target>Здесь</target>
+            </trans-unit>
+            <trans-unit id="K0JE_yZ" resname="comments">
+                <source>comments</source>
+                <target>комментариев</target>
+            </trans-unit>
+            <trans-unit id="7bokozx" resname="No comments have been posted yet for this conference.">
+                <source>No comments have been posted yet for this conference.</source>
+                <target>Пока не было ни одного комментария об этой конференции</target>
+            </trans-unit>
+            <trans-unit id="ilFYXWP" resname="Add your own feedback">
+                <source>Add your own feedback</source>
+                <target>Оставьте ваш отзыв!</target>
+            </trans-unit>
+            <trans-unit id="uhGL9.y" resname="English">
+                <source>English</source>
+                <target>Английский</target>
+            </trans-unit>
+            <trans-unit id="W8xArfb" resname="Russian">
+                <source>Russian</source>
+                <target>Русский</target>
+            </trans-unit>
+            <trans-unit id="Dg2dPd6" resname="nb_of_comments">
+                <source>nb_of_comments</source>
+                <target>{count, plural, =0 {Нет комментариев.} =1 {1 комментарий.} other {# комментариев.}}</target>
+            </trans-unit>
+            <trans-unit id="Dg2dPd7" resname="Your name">
+                <source>Your name</source>
+                <target>Ваше имя</target>
+            </trans-unit>
+            <trans-unit id="Dg2dPd8" resname="Text">
+                <source>Text</source>
+                <target>Текст</target>
+            </trans-unit>
+            <trans-unit id="Dg2dPd9" resname="Email">
+                <source>Email</source>
+                <target>Почта</target>
+            </trans-unit>
+            <trans-unit id="Dg2dPd10" resname="Photo filename">
+                <source>Photo filename</source>
+                <target>Прикрепление</target>
+            </trans-unit>
+            <trans-unit id="Dg2dPd11" resname="Submit">
+                <source>Submit</source>
+                <target>Отправить</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
