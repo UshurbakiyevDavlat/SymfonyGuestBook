@@ -39,4 +39,5 @@
 ## Problems that have left to fix
 
     - Deploying spa on platform sh cloud
-    - Build cordova application
+    - Building cordova application
+    - profiling with blackfire
