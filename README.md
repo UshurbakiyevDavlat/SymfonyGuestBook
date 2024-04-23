@@ -36,8 +36,8 @@
     - Deploy on platform.sh
     - Varnish caching strategy
 
-## Problems that have left to fix
-
+## Problems that have left to do
     - Deploying spa on platform sh cloud
     - Building cordova application
     - profiling with blackfire
+    - (when all above will be fixed) write black box functional test 
