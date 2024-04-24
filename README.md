@@ -32,14 +32,14 @@
     - Makefile
 
 ## Cloud
-
     - Deploy on platform.sh
     - Varnish caching strategy
 
 ## Problems that have left to do
     - Deploying spa on platform sh cloud (node build problem)
     - Building cordova application
-    - when all above will be fixed:
-        write black box functional test
-        do symfony internals with blackfire and xdebug
+
+## Things that need to touch
+    - symfony internals blackfire
+    - symfony internals xdebug
         
