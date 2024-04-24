@@ -17,6 +17,9 @@ services:
   redis:
       image: redis:5-alpine
       ports: [ "6379" ]
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports: ["5672", "15672"]
 
 volumes:
 ###> doctrine/doctrine-bundle ###

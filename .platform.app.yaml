@@ -10,6 +10,7 @@ runtime:
     extensions:
         - apcu
         - redis
+        - amqp
         - blackfire
         - ctype
         - iconv
@@ -43,6 +44,7 @@ mounts:
 relationships:
     database: "database:postgresql"
     redis: "rediscache:redis"
+    rabbitmq: "queue:rabbitmq"
 
 hooks:
     build: |
