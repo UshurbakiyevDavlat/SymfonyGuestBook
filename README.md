@@ -12,6 +12,9 @@
     - Preact on SPA
     - Webpack and webpack encore
     - Bootstrap5
+    - Redis
+    - RabbitMQ
+    - Blackfire
 
 ### Functionality
 
@@ -30,6 +33,10 @@
     - Doctrine auto mapping
     - Async bus messaging
     - Makefile
+    - Redis connection
+    - RabbitMQ connection
+    - Blackfire profiling
+    - Blackbox tests
 
 ## Cloud
     - Deploy on platform.sh
