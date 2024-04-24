@@ -37,7 +37,10 @@
     - Varnish caching strategy
 
 ## Problems that have left to do
-    - Deploying spa on platform sh cloud
+    - Deploying spa on platform sh cloud (node build problem)
     - Building cordova application
     - profiling with blackfire
-    - (when all above will be fixed) write black box functional test 
+    - when all above will be fixed:
+        write black box functional test
+        do symfony internals with blackfire and xdebug
+        
