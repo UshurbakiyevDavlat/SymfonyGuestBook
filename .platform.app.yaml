@@ -9,6 +9,7 @@ dependencies:
 runtime:
     extensions:
         - apcu
+        - redis
         - blackfire
         - ctype
         - iconv
@@ -41,6 +42,7 @@ mounts:
 
 relationships:
     database: "database:postgresql"
+    redis: "rediscache:redis"
 
 hooks:
     build: |
